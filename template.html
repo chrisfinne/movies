@@ -9,6 +9,19 @@
     <link type="text/css" rel="stylesheet" id="smugmugBlackCSS" href="stylesheets/black.css">
     <link type="text/css" rel="stylesheet" id="pureSmugBlack" href="stylesheets/pureBlack.css">
     <link type="text/css" rel="stylesheet" href="stylesheets/jqModal.css">
+    <script>
+      var date = new Date();
+      var date_int = date.getTime();
+      function reloadme() {
+        window.location.replace('/?t='+date_int);
+      }
+      var url_array = window.location.href.split('t=');
+      if (url_array.length != 2)
+        reloadme();
+      var url_time = parseInt(url_array[1]);
+      if (date_int - url_time > 43200000) // force a reload every 12 hours
+        reloadme();
+    </script>
     <script src="http://www.google.com/jsapi"></script>
     <script>
       google.load("jquery", "1.3.2");
