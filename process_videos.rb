@@ -45,12 +45,12 @@ class VideoProcess
 new_html+=<<-EOT
 <div class="miniBox">
   <div class="photo">
-    <a href="##{file_name}">
-      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="images/#{image_name}" class="imgBorder" />
+    <a href="movies/#{movie_path}" class="jqModal">
+      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="movie_images/#{image_name}" class="imgBorder" />
     </a>
   </div>
   <p class="albumTitle" id="albumTitle_#{file_name}">
-    <a href="movies/#{movie_path}" class="nav player">#{nice_file_name}</a>
+    <a href="movies/#{movie_path}" class="nav jqModal">#{nice_file_name}</a>
   </p>
 	<p class="description"></p>
 	<p class="updated"></p>

@@ -22,7 +22,7 @@ body {
 	background: transparent url(http://cdn.smugmug.com/img/gradients/small_black.gif) repeat-x;
 }
 .browse #browseCategories .boxBottom, #content.popular .boxBottom, .searchResults .boxBottom, .signUp .boxBottom, #categoriesBox .boxBottom, #galleriesBox .boxBottom {
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 
 .top_border {
@@ -84,7 +84,7 @@ body {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 .loggedIn #traditional #photoTools {
 	border-bottom: 0px;
@@ -104,7 +104,7 @@ body {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 #smugmug .rightColumn, #smugmug_small .rightColumn {
 	padding-left: 0;
@@ -138,7 +138,7 @@ body {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 #filmstrip #moveContainer {
 	border-top: solid 1px #666666;
@@ -175,7 +175,7 @@ body {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 #critique #comment.top_border {
 	border-top: 0px;
@@ -233,7 +233,7 @@ body {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 
 singleImage #photos, body.tools .boxBottom {
@@ -243,7 +243,7 @@ singleImage #photos, body.tools .boxBottom {
 	border-right: solid 1px #2d2d2d;
 	border-left: solid 1px #2d2d2d;
 	border-bottom: solid 1px #2d2d2d;
-	background: transparent url(http://cdn.smugmug.com/img/gradients/large_black.gif) repeat-x;
+	background: transparent url(http://cdn.smugmug.com/img/gradients/../images/large_black.gif) repeat-x;
 }
 #singleImage #albumNav_bottom {
 	border-top: 1px solid #666666;

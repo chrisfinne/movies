@@ -8,15 +8,14 @@
     <link type="text/css" rel="stylesheet" id="yui_core" href="stylesheets/yui_core.css">
     <link type="text/css" rel="stylesheet" id="smugmugBlackCSS" href="stylesheets/black.css">
     <link type="text/css" rel="stylesheet" id="pureSmugBlack" href="stylesheets/pureBlack.css">
+    <link type="text/css" rel="stylesheet" href="stylesheets/jqModal.css">
     <script src="http://www.google.com/jsapi"></script>
     <script>
       google.load("jquery", "1.3.2");
       google.load("jqueryui", "1.7.2");    
     </script>
+  	<script type="text/javascript" src="javascripts/jqModal.js"></script>
   	<script type="text/javascript" src="javascripts/flowplayer-3.1.1.min.js"></script>
-
-  	<!-- some minimal styling, can be removed -->
-  	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body class="homepage tempClass notLoggedIn pureSmugCSS bodyColor_Black">
 
@@ -32,11 +31,11 @@
       <!-- Start Page Header -->
       <div id="header_wrapper" class="top_border bottom_border">
   <div id="header">
-    <a href="http://www.smugmug.com/" id="homelink"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="SmugMug" title="SmugMug" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo"></a>
+    <a href="/" id="homelink"><img src="images/spacer.gif" alt="SmugMug" title="Finne Videos" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo_DISABLE"></a>
     <div id="toolbar" class="nav">
-      <a href="http://www.smugmug.com" class="nav">Home</a>
+      <a href="/" class="nav">Home</a>
 <!--
-       | <a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Ffinne.smugmug.com%2F" class="nav">Login</a> | <a href="http://www.smugmug.com/visitor-help" class="nav">Help</a> | <form name="searchBox" id="searchBox" method="get" action="/search/index.mg" onsubmit="checkInput('Search','searchWords','')"><input name="searchWords" id="searchWords" type="text" value="Search" onclick="checkInput('Search', 'searchWords', '')" onblur="checkInput('', 'searchWords', 'Search')"><input type="hidden" name="searchType" value="InUser"><input type="hidden" name="NickName" value="finne">&nbsp;<input type="image" src="http://cdn.smugmug.com/img/spacer.gif" alt="Submit Search" title="Submit Search" class="searchglass" onclick="if(document.searchBox.searchWords.value == 'Search') {document.searchBox.searchWords.value = ' ';}"></form>
+       | <a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Ffinne.smugmug.com%2F" class="nav">Login</a> | <a href="http://www.smugmug.com/visitor-help" class="nav">Help</a> | <form name="searchBox" id="searchBox" method="get" action="/search/index.mg" onsubmit="checkInput('Search','searchWords','')"><input name="searchWords" id="searchWords" type="text" value="Search" onclick="checkInput('Search', 'searchWords', '')" onblur="checkInput('', 'searchWords', 'Search')"><input type="hidden" name="searchType" value="InUser"><input type="hidden" name="NickName" value="finne">&nbsp;<input type="image" src="images/spacer.gif" alt="Submit Search" title="Submit Search" class="searchglass" onclick="if(document.searchBox.searchWords.value == 'Search') {document.searchBox.searchWords.value = ' ';}"></form>
 |
 <div id="stylebar" class="nav"><form name="color_chooser" action="" method="get"><span class="title">Color: </span><select name="Color" onchange="styleBarChange('Color', this);"><option value="Black">Dark</option><option value="White">Light</option></select><input type="hidden" name="origin" id="color_origin" value="http://finne.smugmug.com/"><noscript><input type="submit" class="buttons" value="go"></noscript></form></div> 
 -->
@@ -330,22 +329,22 @@
         </div>
     <div id="feeds" class="nav">
         <div id="feedHelp" class="nav">
-            <a href="javascript:toggleHeight('allFeeds');"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Show Feeds" title="Show Feeds" width="16" height="16" hspace="0" vspace="0" border="0" class="feedStandard" /></a><a href="javascript:toggleHeight('allFeeds');" class="nav">Available Feeds</a> |
+            <a href="javascript:toggleHeight('allFeeds');"><img src="images/spacer.gif" alt="Show Feeds" title="Show Feeds" width="16" height="16" hspace="0" vspace="0" border="0" class="feedStandard" /></a><a href="javascript:toggleHeight('allFeeds');" class="nav">Available Feeds</a> |
             <a href="http://www.smugmug.com/help/rss-atom-feeds" class="nav">What are feeds?</a>
         </div>
         <div id="allFeeds">
             <div class="feedLine">
 
                 <div class="feedName nav note">Recent Galleries:</div>
-                                <a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=atom10"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Atom Feed" title="Atom Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="atomfeed" /></a><a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=atom10" class="nav">Atom</a>
-                | <a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=rss200"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="RSS Feed" title="RSS Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="rssfeed" /></a><a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=rss200" class="nav">RSS</a>
+                                <a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=atom10"><img src="images/spacer.gif" alt="Atom Feed" title="Atom Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="atomfeed" /></a><a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=atom10" class="nav">Atom</a>
+                | <a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=rss200"><img src="images/spacer.gif" alt="RSS Feed" title="RSS Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="rssfeed" /></a><a href="/hack/feed.mg?Type=nickname&amp;Data=finne&amp;format=rss200" class="nav">RSS</a>
                                 <div class="spacer"></div>
             </div>
             <div class="feedLine">
                 <div class="feedName nav note">Recent Photos:</div>
 
-                                <a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=atom10"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Atom Feed" title="Atom Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="atomfeed" /></a><a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=atom10" class="nav">Atom</a>
-                | <a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=rss200"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="RSS Feed" title="RSS Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="rssfeed" /></a><a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=rss200" class="nav">RSS</a>
+                                <a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=atom10"><img src="images/spacer.gif" alt="Atom Feed" title="Atom Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="atomfeed" /></a><a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=atom10" class="nav">Atom</a>
+                | <a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=rss200"><img src="images/spacer.gif" alt="RSS Feed" title="RSS Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="rssfeed" /></a><a href="/hack/feed.mg?Type=nicknameRecentPhotos&amp;Data=finne&amp;format=rss200" class="nav">RSS</a>
                                 <div class="spacer"></div>
             </div>
             <div class="spacer"></div>
@@ -356,9 +355,20 @@
 -->
         <!-- End Footer -->
 
+<div class="jqmWindow" id="dialog">
+  <a href="#" class="jqmClose">Close</a>
+  <hr>
+  <a href="#" id="flow_player"> </a> 
+</div>
 
     		<script>
-    			flowplayer("player", "media/flowplayer-3.1.1.swf");
+    		  $().ready(function() {
+            $('#dialog').jqm();
+            $('a.jqModal').click(function() {
+              $("#flow_player")[0].href = this.href;
+        			flowplayer("flow_player", "media/flowplayer-3.1.1.swf");
+            });
+          });
     		</script>
 
     </body>

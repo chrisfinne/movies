@@ -545,7 +545,7 @@ object.movie, embed.movie {
     top: 0;
     left: 0;
     z-index: 10;
-    background: url(http://cdn.smugmug.com/img/spacer.gif);
+    background: url(../images/spacer.gif);
 }
 #gallerySlideShowSWF {
     margin: 0 auto;
