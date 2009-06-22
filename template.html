@@ -9,7 +9,8 @@
       var date = new Date();
       var date_int = date.getTime();
       function reloadme() {
-        window.location.replace('/videos.html?t='+date_int);
+        var new_url = window.location.href.split('?')[0]+'?t='+date_int;
+        window.location.replace(new_url);
       }
       var url_array = window.location.href.split('t=');
       if (url_array.length != 2)
@@ -46,9 +47,9 @@
       <!-- Start Page Header -->
       <div id="header_wrapper" class="top_border bottom_border">
   <div id="header">
-    <a href="/videos.html" id="homelink"><img src="images/spacer.gif" alt="SmugMug" title="Finne Videos" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo_DISABLE"></a>
+    <a href="/videos.html" id="homelink" class="root_url"><img src="images/spacer.gif" alt="SmugMug" title="Finne Videos" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo_DISABLE"></a>
     <div id="toolbar" class="nav">
-      <a href="/videos.html" class="nav">Home</a>
+      <a href="/videos.html" class="nav root_url">Home</a>
 <!--
        | <a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Ffinne.smugmug.com%2F" class="nav">Login</a> | <a href="http://www.smugmug.com/visitor-help" class="nav">Help</a> | <form name="searchBox" id="searchBox" method="get" action="/search/index.mg" onsubmit="checkInput('Search','searchWords','')"><input name="searchWords" id="searchWords" type="text" value="Search" onclick="checkInput('Search', 'searchWords', '')" onblur="checkInput('', 'searchWords', 'Search')"><input type="hidden" name="searchType" value="InUser"><input type="hidden" name="NickName" value="finne">&nbsp;<input type="image" src="images/spacer.gif" alt="Submit Search" title="Submit Search" class="searchglass" onclick="if(document.searchBox.searchWords.value == 'Search') {document.searchBox.searchWords.value = ' ';}"></form>
 |
