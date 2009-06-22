@@ -33,35 +33,38 @@ class VideoProcess
     def go_html
       arr=[]
       new_html=''
-      Dir["#{DST_PATH}/2*"].sort.reverse.each do |file_path|
-        next if file_path =~ /Alex_Born_Uncut/ # Skip the explicit video
-        movie_path=File.basename(file_path).gsub(" ",'_') 
-        file_name = base_name(file_path)
-        nice_file_name = file_name.gsub('_',' ')
-        puts nice_file_name
-        images = Dir[image_file_name_stub(file_path)+"*"].sort.collect{|f| File.basename(f)}
-        image_name=images.first
-        arr << {:file_name=>File.basename(file_path),  :images=>images}
+      (2003..Time.now.year).to_a.each do |year|
+        new_html=''
+        Dir["#{DST_PATH}/#{year}*"].sort.reverse.each do |file_path|
+          next if file_path =~ /Alex_Born_Uncut/ # Skip the explicit video
+          movie_path=File.basename(file_path).gsub(" ",'_') 
+          file_name = base_name(file_path)
+          nice_file_name = file_name.gsub('_',' ')
+          puts nice_file_name
+          images = Dir[image_file_name_stub(file_path)+"*"].sort.collect{|f| File.basename(f)}
+          image_name=images.first
 
-new_html+=<<-EOT
-<div class="miniBox">
-  <div class="photo">
-    <a href="movies/#{movie_path}" class="jqModal">
-      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="movie_images/#{image_name}" class="imgBorder" />
-    </a>
+  new_html+=<<-EOT
+  <div class="miniBox">
+    <div class="photo">
+      <a href="movies/#{movie_path}" class="jqModal">
+        <img vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="movie_images/#{image_name}" class="imgBorder" />
+      </a>
+    </div>
+    <p class="albumTitle" id="albumTitle_#{file_name}">
+      <a href="movies/#{movie_path}" class="nav jqModal">#{nice_file_name}</a>
+    </p>
+  	<p class="description"></p>
+  	<p class="updated"></p>
+    <div class="spacer"></div>
   </div>
-  <p class="albumTitle" id="albumTitle_#{file_name}">
-    <a href="movies/#{movie_path}" class="nav jqModal">#{nice_file_name}</a>
-  </p>
-	<p class="description"></p>
-	<p class="updated"></p>
-  <div class="spacer"></div>
-</div>
-EOT
+  EOT
 
+        end
+        html = File.read("template.html").gsub(TAG_REGEXP) { new_html}
+        filename = year==Time.now.year ? 'videos.html' : "#{year}.html"
+        File.open(filename,"w") {|f| f << html }
       end
-      html = File.read("template.html").gsub(TAG_REGEXP) { new_html}
-      File.open("videos.html","w") {|f| f << html }
     end
     
     def has_images?(file_path)
