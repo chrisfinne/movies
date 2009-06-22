@@ -30,11 +30,14 @@
   <div id="header">
     <a href="http://www.smugmug.com/" id="homelink"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="SmugMug" title="SmugMug" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo"></a>
     <div id="toolbar" class="nav">
-      <a href="http://www.smugmug.com" class="nav">Home</a> | <a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Ffinne.smugmug.com%2F" class="nav">Login</a> | <a href="http://www.smugmug.com/visitor-help" class="nav">Help</a> | <form name="searchBox" id="searchBox" method="get" action="/search/index.mg" onsubmit="checkInput('Search','searchWords','')"><input name="searchWords" id="searchWords" type="text" value="Search" onclick="checkInput('Search', 'searchWords', '')" onblur="checkInput('', 'searchWords', 'Search')"><input type="hidden" name="searchType" value="InUser"><input type="hidden" name="NickName" value="finne">&nbsp;<input type="image" src="http://cdn.smugmug.com/img/spacer.gif" alt="Submit Search" title="Submit Search" class="searchglass" onclick="if(document.searchBox.searchWords.value == 'Search') {document.searchBox.searchWords.value = ' ';}"></form>
-
+      <a href="http://www.smugmug.com" class="nav">Home</a>
+<!--
+       | <a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Ffinne.smugmug.com%2F" class="nav">Login</a> | <a href="http://www.smugmug.com/visitor-help" class="nav">Help</a> | <form name="searchBox" id="searchBox" method="get" action="/search/index.mg" onsubmit="checkInput('Search','searchWords','')"><input name="searchWords" id="searchWords" type="text" value="Search" onclick="checkInput('Search', 'searchWords', '')" onblur="checkInput('', 'searchWords', 'Search')"><input type="hidden" name="searchType" value="InUser"><input type="hidden" name="NickName" value="finne">&nbsp;<input type="image" src="http://cdn.smugmug.com/img/spacer.gif" alt="Submit Search" title="Submit Search" class="searchglass" onclick="if(document.searchBox.searchWords.value == 'Search') {document.searchBox.searchWords.value = ' ';}"></form>
 |
-<div id="stylebar" class="nav"><form name="color_chooser" action="" method="get"><span class="title">Color: </span><select name="Color" onchange="styleBarChange('Color', this);"><option value="Black">Dark</option><option value="White">Light</option></select><input type="hidden" name="origin" id="color_origin" value="http://finne.smugmug.com/"><noscript><input type="submit" class="buttons" value="go"></noscript></form></div> |<a href="https://secure.smugmug.com/cart"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="View Cart" title="View Cart" width="21" height="18" hspace="0" vspace="0" border="0" class="shoppingcart"></a>
+<div id="stylebar" class="nav"><form name="color_chooser" action="" method="get"><span class="title">Color: </span><select name="Color" onchange="styleBarChange('Color', this);"><option value="Black">Dark</option><option value="White">Light</option></select><input type="hidden" name="origin" id="color_origin" value="http://finne.smugmug.com/"><noscript><input type="submit" class="buttons" value="go"></noscript></form></div> 
+-->
     </div>
+
     <div class="spacer"></div>
   </div>
 </div>
@@ -59,6 +62,7 @@
 
 				</div>
 					<div class="boxBottom">
+<!-- START_MOVIES -->
 										 <div class="miniBox">
                         <div class="photo"><a href="/gallery/8181934_MiF5h"><img  vspace="0" hspace="0"  border="0" alt="2009-05 Tahoe : " title="2009-05 Tahoe : "  src="/photos/random.mg?AlbumID=8181934&amp;Size=Tiny&amp;AlbumKey=MiF5h&amp;rand=3954" class="imgBorder" /></a></div>
                         <p class="albumTitle" id="albumTitle_8181934"><a href="/gallery/8181934_MiF5h" class="nav">2009-05 Tahoe</a></p>
@@ -339,11 +343,7 @@
         </div>
 
         <div class="miniBox">
-                        <div class="photo"><a href="/gallery/5605865_pYxKT"><img  vspace="0" hspace="0" border="0"  alt="2008-06 Moran Manor : Spent the day in wine country visiting Rich Moran's (a Partner I work with) winery Moran Manor http://www.moranmanor.com/
-
-Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed to be the best year." title="2008-06 Moran Manor : Spent the day in wine country visiting Rich Moran's (a Partner I work with) winery Moran Manor http://www.moranmanor.com/
-
-Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed to be the best year."  width="100" height="100" src="/photos/344080218_mgn9X-Ti.jpg" class="imgBorder" /></a></div>
+                        <div class="photo"><a href="/gallery/5605865_pYxKT"><img  vspace="0" hspace="0" border="0"  alt="2008-06 Moran Manor." title="2008-06 Moran Manor : "  width="100" height="100" src="/photos/344080218_mgn9X-Ti.jpg" class="imgBorder" /></a></div>
                         <p class="albumTitle" id="albumTitle_5605865"><a href="/gallery/5605865_pYxKT" class="nav">2008-06 Moran Manor</a></p>
 						                                                <p id="albumDescription_5605865" class="description">Spent the day in wine country visiting Rich Moran's (a Partner I work  ...</p>                                                 <p class="updated">Updated: Aug 03, 2008 4:54am EDT</p>
             <div class="spacer"></div>
@@ -1742,9 +1742,10 @@ Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed 
 						                                                                         <p class="updated">Updated: Jan 31, 2009 10:56am EDT</p>
             <div class="spacer"></div>
         </div>
+<!-- END_MOVIES -->
                                    <div class="spacer"></div></div>
         </div>            <div id="bioBox" class="box">
-
+<!--
 				<div class="boxTop">
 					<div class="boxNote note nav"></div>
 					<h3 id="bioTitle" class="title notopmargin">Your Bio</h3>
@@ -1929,7 +1930,7 @@ Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed 
 	              				              		</select>
 	              		<input type="submit" value="browse" class="buttons submit_button">
 	              		</form>
-
+-->
               <div class="spacer"></div></div>
 	         	           </div><div class="spacer"></div>
 	                </div></div>
@@ -1937,15 +1938,7 @@ Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed 
 
 <!-- Start Footer -->
 
-
-<script language="JavaScript" type="text/javascript">
-    <!--
-        // IE has issues with setting cookies when sites are framed, so logging in and using the cart do not work. So we have to break frames!
-                if (framesWarning == true && window != top) {
-            top.location.href = location.href;
-        }
-    // -->
-    </script>
+<!--
     <div id="footer_wrapper" class="top_border" style="visibility: visible; display: block; clear: both;">
         <div id="footer" class="nav" style="visibility: visible; display: block;">
 
@@ -1995,36 +1988,7 @@ Kids had a great time playing and we got to taste his wine Anagram. 2004 seemed 
     </div>
 
     </div>
-    <script type="text/javascript">
-    (function() {
-        var sRes;
-
-        if (typeof(screen) == 'object'){
-            sRes = screen.width + 'x' + screen.height;
-        }
-
-        if (readCookie('res') != sRes) {
-            createCookie('res', sRes, 365);
-        }
-    })();
-    </script>
-    <script type="text/javascript">
-        _qacct = "p-33GsugQTR-pOM";
-
-        (function() {
-            function loadQuantcast() {
-                var s = document.createElement('script');
-                s.src = 'http://edge.quantserve.com/quant.js';
-                document.body.appendChild(s);
-
-                if (typeof quantserve == 'function') {
-                    quantserve();
-                }
-            }
-
-            YE.addListener(window, 'load', loadQuantcast);
-        })();
-    </script>
+-->
         <!-- End Footer -->
 
 
