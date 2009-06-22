@@ -34,6 +34,7 @@ class VideoProcess
       arr=[]
       new_html=''
       Dir["#{DST_PATH}/2*"].sort.reverse.each do |file_path|
+        movie_path=File.basename(file_path).gsub(" ",'_') 
         file_name = base_name(file_path)
         nice_file_name = file_name.gsub('_',' ')
         puts nice_file_name
@@ -49,7 +50,7 @@ new_html+=<<-EOT
     </a>
   </div>
   <p class="albumTitle" id="albumTitle_#{file_name}">
-    <a href="#" class="nav">#{nice_file_name}</a>
+    <a href="movies/#{movie_path}" class="nav player">#{nice_file_name}</a>
   </p>
 	<p class="description"></p>
 	<p class="updated"></p>
