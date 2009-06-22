@@ -369,14 +369,15 @@
         <!-- End Footer -->
 
 <div class="jqmWindow" id="dialog">
-  <a href="#" class="jqmClose">Close</a>
+  <a href="#" class="jqmClose" id="dialog_close">Close</a>
   <hr>
   <a href="#" id="flow_player"> </a> 
 </div>
 
     		<script>
+    		  var stop_player=function(hash) { flowplayer().stop();hash.w.fadeOut('500',function(){ hash.o.remove(); }); }; 
     		  $().ready(function() {
-            $('#dialog').jqm();
+            $('#dialog').jqm({onHide:stop_player});
             $('a.jqModal').click(function() {
               $("#flow_player")[0].href = this.href;
         			flowplayer("flow_player", "media/flowplayer-3.1.1.swf");
