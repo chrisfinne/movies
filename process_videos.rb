@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 # ffmpeg processing inspired by http://h264.code-shop.com/trac/wiki/Encoding
+# Resulting mp4 files work on iPhone
+# ffmpeg installed via MacPorts
+# to install qt-faststart, download the source for ffmpeg and find the src file then compile:
+#    gcc qt-faststart.c -o qt-faststart
 
 SRC_PATH="/Users/chrisfinne/Movies"
 DST_PATH="#{SRC_PATH}/small"
@@ -22,7 +26,16 @@ class VideoProcess
         convert_to_h264(file_path,out_file_path) unless File.exists?(out_file_path)
       end
     end
-
+    
+    def go_html
+      arr=[]
+      Dir["#{DST_PATH}/*"].sort.reverse.each do |file_path|
+        images = Dir[image_file_name_stub(f)+"*"].sort.collect{|f| File.basename(f)}
+        arr << {:movie=>File.basename(file_path),  :images=>images}
+      end
+      
+    end
+    
     def has_images?(file_path)
       File.exists?(image_file_name_stub(file_path) + "_001.png") or File.exists?(image_file_name_stub(file_path) + "_000.png")
     end
