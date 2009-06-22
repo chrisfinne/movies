@@ -27,13 +27,38 @@ class VideoProcess
       end
     end
     
+    TAG_START='START_MOVIES'
+    TAG_END='END_MOVIES'
+    TAG_REGEXP=Regexp.new('\n[^\n]+'+TAG_START+'.*'+TAG_END+'[^\n]+\n',Regexp::MULTILINE)
     def go_html
       arr=[]
+      new_html=''
       Dir["#{DST_PATH}/*"].sort.reverse.each do |file_path|
-        images = Dir[image_file_name_stub(f)+"*"].sort.collect{|f| File.basename(f)}
-        arr << {:movie=>File.basename(file_path),  :images=>images}
+        file_name = File.basename(file_path)
+        nice_file_name = file_name.gsub('_',' ')
+        images = Dir[image_file_name_stub(file_path)+"*"].sort.collect{|f| File.basename(f)}
+        image_name=images.first
+        arr << {:file_name=>File.basename(file_path),  :images=>images}
+
+new_html+=<<-EOT
+<div class="miniBox">
+  <div class="photo">
+    <a href="##{file_name}">
+      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="/images/#{image_name}" class="imgBorder" />
+    </a>
+  </div>
+  <p class="albumTitle" id="albumTitle_#{file_name}">
+    <a href="#" class="nav">#{nice_file_name}</a>
+  </p>
+	<p class="description"></p>
+	<p class="updated"></p>
+  <div class="spacer"></div>
+</div>
+EOT
+
       end
-      
+      html = File.read("template.html").gsub(TAG_REGEXP) { new_html}
+      File.open("index.html","w") {|f| f << html }
     end
     
     def has_images?(file_path)
@@ -70,4 +95,11 @@ class VideoProcess
   end
 end
 
-VideoProcess.go
+valid_cmds = ['go_videos', 'go_html']
+valid_cmds_str = "(#{valid_cmds.join('|')})"
+if ARGV[0] =~ Regexp.new('\A'+valid_cmds_str+'\Z')
+  VideoProcess.send(ARGV[0])
+else
+  puts "usage: process_videos.rb #{valid_cmds_str}"
+end
+
