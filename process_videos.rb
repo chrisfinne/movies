@@ -33,9 +33,10 @@ class VideoProcess
     def go_html
       arr=[]
       new_html=''
-      Dir["#{DST_PATH}/*"].sort.reverse.each do |file_path|
-        file_name = File.basename(file_path)
+      Dir["#{DST_PATH}/2*"].sort.reverse.each do |file_path|
+        file_name = base_name(file_path)
         nice_file_name = file_name.gsub('_',' ')
+        puts nice_file_name
         images = Dir[image_file_name_stub(file_path)+"*"].sort.collect{|f| File.basename(f)}
         image_name=images.first
         arr << {:file_name=>File.basename(file_path),  :images=>images}
@@ -44,7 +45,7 @@ new_html+=<<-EOT
 <div class="miniBox">
   <div class="photo">
     <a href="##{file_name}">
-      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="/images/#{image_name}" class="imgBorder" />
+      <img  vspace="0" hspace="0" border="0"  alt="#{nice_file_name}" title="#{nice_file_name}"  width="100" height="100" src="images/#{image_name}" class="imgBorder" />
     </a>
   </div>
   <p class="albumTitle" id="albumTitle_#{file_name}">
@@ -73,7 +74,11 @@ EOT
     end
 
     def image_file_name_stub(file_path)
-      IMG_PATH + "/" + File.basename(file_path, File.extname(file_path)).gsub(" ",'_') 
+      IMG_PATH + "/" + base_name(file_path)
+    end
+    
+    def base_name(file_path)
+      File.basename(file_path, File.extname(file_path)).gsub(" ",'_') 
     end
     
     def convert_to_h264(file_path,out_file_path)
