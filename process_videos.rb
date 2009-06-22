@@ -34,6 +34,7 @@ class VideoProcess
       arr=[]
       new_html=''
       Dir["#{DST_PATH}/2*"].sort.reverse.each do |file_path|
+        next if file_path =~ /Alex_Born_Uncut/ # Skip the explicit video
         movie_path=File.basename(file_path).gsub(" ",'_') 
         file_name = base_name(file_path)
         nice_file_name = file_name.gsub('_',' ')
@@ -60,7 +61,7 @@ EOT
 
       end
       html = File.read("template.html").gsub(TAG_REGEXP) { new_html}
-      File.open("index.html","w") {|f| f << html }
+      File.open("videos.html","w") {|f| f << html }
     end
     
     def has_images?(file_path)
