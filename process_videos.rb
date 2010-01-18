@@ -72,8 +72,8 @@ class VideoProcess
     def extract_images(file_path)
       puts "\n\nExtract Images for #{file_path}\n\n"
       pattern = image_file_name_stub(file_path) + "_%03d.png"
-      # Extract 1 image per second of a thumbnail size for the first 20 seconds of the video
-      cmd = %Q!ffmpeg -i "#{file_path}" -r 1 -f image2 -s 120x96 -t 20 #{pattern}!
+      # Extract 1 image per second of a thumbnail size for the first 10 seconds of the video
+      cmd = %Q!ffmpeg -i "#{file_path}" -r 1 -f image2 -s 120x96 -t 10 #{pattern}!
       `#{cmd}`
     end
 
