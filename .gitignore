@@ -1,4 +1,5 @@
 log/**
+ffmpeg2pass*.log
 index.html
 videos.html
 movie_images
