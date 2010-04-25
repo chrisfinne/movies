@@ -9,7 +9,7 @@
 SRC_PATH="/Users/chrisfinne/Movies"
 DST_PATH="#{SRC_PATH}/small"
 IMG_PATH="#{DST_PATH}/images"
-EXT=['.avi', '.wmv']
+EXT=['.avi', '.wmv', '.mp4']
 
 
 class VideoProcess
