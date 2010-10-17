@@ -9,7 +9,7 @@
 SRC_PATH="/Users/chrisfinne/Movies"
 DST_PATH="#{SRC_PATH}/small"
 IMG_PATH="#{DST_PATH}/images"
-EXT=['.avi', '.wmv', '.mp4']
+EXT=['.avi', '.wmv', '.mp4', '.MP4','.flv']
 
 
 class VideoProcess
@@ -20,8 +20,8 @@ class VideoProcess
         next unless EXT.include?(File.extname(file_path).downcase)
         next unless File.basename(file_path)=~/\A2/
         extract_images(file_path) unless has_images?(file_path)
-        out_file_path=File.join(DST_PATH,File.basename(file_path, File.extname(file_path)).gsub(" ",'_') ) + ".mp4"
-        convert_to_h264(file_path,out_file_path) unless File.exists?(out_file_path)
+#        out_file_path=File.join(DST_PATH,File.basename(file_path, File.extname(file_path)).gsub(" ",'_') ) + ".mp4"
+#        convert_to_h264(file_path,out_file_path) unless File.exists?(out_file_path)
       end
     end
     
@@ -31,11 +31,11 @@ class VideoProcess
     def go_html
       arr=[]
       new_html=''
-      (2003..Time.now.year).to_a.each do |year|
+      (Time.now.year).to_a.each do |year|
         new_html=''
-        Dir["#{DST_PATH}/#{year}*"].sort.reverse.each do |file_path|
+        Dir["#{SRC_PATH}/#{year}*"].sort.reverse.each do |file_path|
           next if file_path =~ /Alex_Born_Uncut/ # Skip the explicit video
-          movie_path=File.basename(file_path).gsub(" ",'_') 
+          movie_path=File.basename(file_path).gsub(" ",'%20') 
           file_name = base_name(file_path)
           nice_file_name = file_name.gsub('_',' ')
           puts nice_file_name
@@ -72,8 +72,8 @@ class VideoProcess
     def extract_images(file_path)
       puts "\n\nExtract Images for #{file_path}\n\n"
       pattern = image_file_name_stub(file_path) + "_%03d.png"
-      # Extract 1 image per second of a thumbnail size for the first 10 seconds of the video
-      cmd = %Q!ffmpeg -i "#{file_path}" -r 1 -f image2 -s 120x96 -t 10 #{pattern}!
+      # Extract 1 image per second of a thumbnail size for the first 2 seconds of the video
+      cmd = %Q!ffmpeg -i "#{file_path}" -r 1 -f image2 -s 120x96 -t 2 #{pattern}!
       `#{cmd}`
     end
 
